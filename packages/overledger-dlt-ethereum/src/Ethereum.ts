@@ -308,7 +308,7 @@ class Ethereum extends AbstractDLT {
             error: 'To invoke a smart contract on Ethereum that has input parameters, you need to provide the name field for each smart contract input parameter',
           };
         }
-        if (!thisSCEthereumParam.value) {
+        if (thisSCEthereumParam.value === undefined) {
           return {
             success: false,
             failingField: 'ethereumSC.functionCall[0].inputParams[counter].value',

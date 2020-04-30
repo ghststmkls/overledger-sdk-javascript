@@ -89,6 +89,7 @@ class OverledgerSearch {
    */
   smartContractQuery(dlt: string, contractQueryDetails: Object): AxiosPromise {
     try {
+      console.log(`contractQueryDetails ${JSON.stringify(contractQueryDetails)}`);
       return this.request.post(`/${dlt}/contracts/query/`, JSON.stringify(contractQueryDetails));
     } catch (e) {
       return e.response;
